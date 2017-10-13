@@ -9,22 +9,24 @@
     color: aliceblue;
 }
 .footer{
+    margin-top:10px;
+
     bottom:0px;
-    position:fixed;
-    padding:30px;
+
+    padding:10px;
     background-color:beige;
         width:100%;
 }
 .card{
-    height:200px;
-
     margin:30px;
+    
+
 }
 .card:hover{
     border:1px solid black;
 }
 .card-bg{
-    background-color:azure;
+    background-color:cornsilk;
 }
 
 .jumbotron{
@@ -33,4 +35,7 @@
 }
 .form-control{
     margin-bottom:10px;
+}
+.centered{
+    text-align:center
 }

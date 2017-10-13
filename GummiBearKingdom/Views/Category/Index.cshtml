@@ -27,6 +27,14 @@
     </a>
 </div>
 
+<div class="card">
+    <div class="card-block centered">
+        <h4>About Gummi Bear Kingdom</h4>
+        <p>        Gummi Bear Kindom is all about taking our customers on a unique flavor experience through the magic of Gummies. Between Gummi Bear, Gummi Snakes, and even Gummi Humans, we make sure each bite is a delicious journey. </p>
+
+    </div>
+</div>
+
 <div class="jumbotron">
     <h2>All Categories </h2>
 </div>
@@ -34,24 +42,17 @@
 <div class="card-group">
     @foreach (var Category in @ViewBag.AllCategories)
     {
-
         <br>
-
         <div class="card card-inverse card-bg">
             <div class="card-block">
                 <h4 class="card-title">@Html.ActionLink((string)Category.CategoryName, "Details", new { CategoryId = Category.CategoryId })</h4>
                 <h6 class="card-subtitle mb-2 text-muted">@Category.CategoryDescription</h6>
-
-               
-
-              
             </div>
             <div class="card-footer">
                 <a class="card-link">@Html.ActionLink("Edit", "Update", new { CategoryId = Category.CategoryId })</a>
                 <a class="card-link">@Html.ActionLink("Delete", "Delete", new { CategoryId = @Category.CategoryId })</a>
             </div>
         </div>
-
     }
 </div>
 <input type="button" class="btn btn-info" value="Add New Category" onclick="location.href='@Url.Action("Create")'" />
