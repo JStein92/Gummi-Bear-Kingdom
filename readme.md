@@ -4,6 +4,8 @@
 
 #### _A mockup site for 'Gummi Bear Kingdom' made in DotNet with MVC_
 
+#### Inspired By https://www.haribo.com/enUS/home.html
+
 ## Site Specs
 
 - Database
@@ -77,5 +79,5 @@ Copyright (c) 2017 **_Jonathan Stein_**
 
 #### Commands in terminal or VS Package Console (Windows only)
 * `dotnet restore`
-* `dotnet ef migrations add Initial` 
+* `dotnet ef migrations add Initial`
 * `dotnet database update`
