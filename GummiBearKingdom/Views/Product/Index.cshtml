@@ -1,0 +1,19 @@
+﻿<div class="jumbotron"><h1>All Products</h1></div>
+
+
+
+    @foreach (var product in @ViewBag.AllProducts)
+    {
+
+        <div class="card card-inverse card-bg mb-3 text-center">
+            <div class="card-block">
+                <h1 style="color:black">@product.ProductName</h1>
+                <hr />
+                <blockquote class="card-blockquote">
+                    <h2> @Html.ActionLink("Details", "Details", "Product", new { ProductId = product.ProductId }) | @Html.ActionLink("Delete", "Delete", "Product", new { ProductId = product.ProductId }) | @Html.ActionLink("Update", "Update", "Product", new { ProductId = product.ProductId })</h2>
+                </blockquote>
+            </div>
+        </div>
+    }
+
+<input type="button" class="btn btn-info" value="Add New Category" onclick="location.href='@Url.Action("Create")'" />

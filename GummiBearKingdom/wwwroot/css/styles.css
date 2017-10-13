@@ -10,7 +10,7 @@
 }
 .footer{
     bottom:0px;
-    position:absolute;
+    position:fixed;
     padding:30px;
     background-color:beige;
         width:100%;

@@ -19,4 +19,7 @@
     </tbody>
 </table>
 
-<input type="button" class="btn btn-warning" value="Back" onclick="location.href='@Url.Action("Details", "Category", new { CategoryId = @Model.CategoryId })'" />
+<input type="button" class="btn btn-warning" value="View Category" onclick="location.href='@Url.Action("Details", "Category", new { CategoryId = @Model.CategoryId })'" />
+
+
+<input type="button" class="btn btn-warning" value="View All Products" onclick="location.href='@Url.Action("Index", "Product")'" />

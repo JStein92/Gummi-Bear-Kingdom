@@ -10,6 +10,13 @@ namespace GummiBearKingdom.Controllers
     {
         private GummiBearKingdomContext db = new GummiBearKingdomContext();
 
+
+        public IActionResult Index()
+        {
+            ViewBag.AllProducts = db.Products.ToList();
+            return View();
+        }
+
         public IActionResult Create(int CategoryId)
         {
             var thisCategory = db.Categories.FirstOrDefault(Category => Category.CategoryId == CategoryId);
