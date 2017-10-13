@@ -42,6 +42,11 @@
                 <h4 class="card-title">@Html.ActionLink((string)Category.CategoryName, "Details", new { CategoryId = Category.CategoryId })</h4>
                 <h6 class="card-subtitle mb-2 text-muted">@Category.CategoryDescription</h6>
 
+               
+
+              
+            </div>
+            <div class="card-footer">
                 <a class="card-link">@Html.ActionLink("Edit", "Update", new { CategoryId = Category.CategoryId })</a>
                 <a class="card-link">@Html.ActionLink("Delete", "Delete", new { CategoryId = @Category.CategoryId })</a>
             </div>
@@ -49,9 +54,8 @@
 
     }
 </div>
-<h4>@Html.ActionLink("Create new Category", "Create")</h4>
+<input type="button" class="btn btn-info" value="Add New Category" onclick="location.href='@Url.Action("Create")'" />
 
-		<br>
 
  
 

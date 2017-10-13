@@ -1,15 +1,22 @@
 ﻿@model GummiBearKingdom.Models.Category
 
-<h2>Details for @Model.CategoryName</h2>
+<div class="jumbotron"><h2>Details for @Model.CategoryName Category</h2></div>
+<div class="card-deck">
+    @foreach (var product in @Model.Products)
+    {
 
-@foreach(var product in @Model.Products)
-{
-    <li>@product.ProductName | @Html.ActionLink("Details","Details","Product", new {ProductId = product.ProductId}) 
-	|  @Html.ActionLink("Edit","Update","Product", new {ProductId = product.ProductId}) 
-	|  @Html.ActionLink("Delete","Delete","Product", new {ProductId = product.ProductId}) 
-    </li>
-}
+        <div class="card card-inverse card-bg mb-3 text-center">
+            <div class="card-block">
+                <h1 style="color:black">@product.ProductName</h1>
+                <hr />
+                <blockquote class="card-blockquote">
+                    <h2> @Html.ActionLink("Details", "Details", "Product", new { ProductId = product.ProductId }) | @Html.ActionLink("Delete", "Delete", "Product", new { ProductId = product.ProductId }) | @Html.ActionLink("Update", "Update", "Product", new { ProductId = product.ProductId })</h2>
+                </blockquote>
+            </div>
+        </div>
+    }
+</div>
+<input type="button" class="btn btn-info" value="Add Product" onclick="location.href='@Url.Action("Create", "Product", new {CategoryId = @Model.CategoryId})'" />
 
-@Html.ActionLink("Add New Product", "Create", "Product", new {CategoryId = @Model.CategoryId})
 
-@Html.ActionLink("Back", "Index")
+<input type="button" class="btn btn-warning" value="Back" onclick="location.href='@Url.Action("Index")'" />

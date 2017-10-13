@@ -1,6 +1,22 @@
 ﻿@model GummiBearKingdom.Models.Product
 
-<h2>Details for @Model.ProductName</h2>
+<div class="jumbotron"><h2>Details for @Model.ProductName</h2></div>
 
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Cost</th>
+            <th>Country of Origin</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.ProductName</td>
+            <td>@Model.ProductCost</td>
+            <td>@Model.ProductCountry</td>
+        </tr>
+    </tbody>
+</table>
 
-@Html.ActionLink("Back", "Details", "Category", new { CategoryId = Model.CategoryId })
+<input type="button" class="btn btn-warning" value="Back" onclick="location.href='@Url.Action("Details", "Category", new { CategoryId = @Model.CategoryId })'" />

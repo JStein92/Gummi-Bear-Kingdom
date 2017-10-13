@@ -1,21 +1,24 @@
 ﻿@model GummiBearKingdom.Models.Product
 
-<h4>Edit @Model.ProductName Product</h4>
+
+<div class="jumbotron"><h4>Edit @Model.ProductName Product</h4>
+</div>
 
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.ProductId)
 
     <label>Name</label>
-    @Html.EditorFor(model => model.ProductName, new {@class = "form-control"})
+    @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
 
-    <br>
     <label>Cost</label>
-    @Html.EditorFor(model => model.ProductCost, new {@class = "form-control"})
+    @Html.EditorFor(model => model.ProductCost, new { htmlAttributes = new { @class = "form-control" } })
 
     <label>Country of Origin</label>
-    @Html.EditorFor(model => model.ProductCountry, new { @class = "form-control" })
+    @Html.EditorFor(model => model.ProductCountry, new { htmlAttributes = new { @class = "form-control" } })
 
     <input type="Submit" value="Save" class ="btn btn-info"/>
+
+    <input type="button" class="btn btn-warning" value="Back" onclick="location.href='@Url.Action("Details", "Category", new { CategoryId = @Model.CategoryId })'" />
 }
-@Html.ActionLink("Back", "Details", "Category", new { CategoryId = @Model.CategoryId })
+

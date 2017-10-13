@@ -5,6 +5,6 @@
 @using (Html.BeginForm())
 {
     <input type ="submit" value="Delete" class = "btn btn-danger">
+    <input type="button" class="btn btn-warning" value="Back" onclick="location.href='@Url.Action("Details", "Category", new { CategoryId = @Model.CategoryId })'" />
 }
 
-@Html.ActionLink("Back", "Details", "Category", new { CategoryId = @Model.CategoryId })
