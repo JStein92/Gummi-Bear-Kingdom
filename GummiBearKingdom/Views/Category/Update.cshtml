@@ -1,0 +1,19 @@
+﻿@model GummiBearKingdom.Models.Category
+
+<h4>Edit @Model.CategoryName Category</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.CategoryId)
+
+    <label>Name</label>
+    @Html.EditorFor(model => model.CategoryName, new {@class = "form-control"})
+
+    <br>
+    <label>Skill Level</label>
+    @Html.EditorFor(model => model.CategoryDescription, new {@class = "form-control"})
+
+    <input type="Submit" value="Save" class ="btn btn-info"/>
+}
+
+@Html.ActionLink("Back", "Index")

@@ -1,0 +1,33 @@
+﻿.carousel-inner, .carousel {
+    width: 100%;
+    text-align:center;
+}
+.d-block{
+    width:100%;
+}
+.nav-text {
+    color: aliceblue;
+}
+.footer{
+    bottom:0px;
+    position:absolute;
+    padding:30px;
+    background-color:beige;
+        width:100%;
+}
+.card{
+    height:200px;
+
+    margin:30px;
+}
+.card:hover{
+    border:1px solid black;
+}
+.card-bg{
+    background-color:azure;
+}
+
+.jumbotron{
+    padding:20px;text-align:center;
+    margin:0px;
+}

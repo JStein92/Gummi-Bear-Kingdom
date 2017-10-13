@@ -1,0 +1,21 @@
+﻿@model GummiBearKingdom.Models.Product
+
+<h4>Edit @Model.ProductName Product</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.ProductId)
+
+    <label>Name</label>
+    @Html.EditorFor(model => model.ProductName, new {@class = "form-control"})
+
+    <br>
+    <label>Cost</label>
+    @Html.EditorFor(model => model.ProductCost, new {@class = "form-control"})
+
+    <label>Country of Origin</label>
+    @Html.EditorFor(model => model.ProductCountry, new { @class = "form-control" })
+
+    <input type="Submit" value="Save" class ="btn btn-info"/>
+}
+@Html.ActionLink("Back", "Details", "Category", new { CategoryId = @Model.CategoryId })

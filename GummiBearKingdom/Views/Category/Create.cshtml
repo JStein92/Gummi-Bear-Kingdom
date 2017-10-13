@@ -1,0 +1,16 @@
+﻿@model GummiBearKingdom.Models.Category
+
+<h1>Create a new Category</h1>
+
+@using (Html.BeginForm())
+{
+    <label>Category Name</label>
+    @Html.EditorFor(model => model.CategoryName)
+
+    <label>Description</label>
+    @Html.EditorFor(model => model.CategoryDescription)
+
+    <input type ="submit" value="Create" class="btn btn-success"/>
+}
+
+@Html.ActionLink("Back to List", "Index")

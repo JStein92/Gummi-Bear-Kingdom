@@ -1,0 +1,58 @@
+﻿@model GummiBearKingdom.Models.Category
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+            <img class="d-block img-fluid" src="https://www.haribo.com/fileadmin/upload/USA/Teaser/startseite-teaser-980x392-2017-01.png" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block img-fluid" src="https://www.haribo.com/fileadmin/upload/USA/Teaser/Startpage_Teaser_Production.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block img-fluid" src="https://www.haribo.com/fileadmin/upload/USA/Teaser/guess_mystery_flavors_HARIBO_US_desktop.jpg" alt="Third slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="jumbotron">
+    <h2>Product Categories </h2>
+</div>
+
+<div class="card-group">
+    @foreach (var Category in @ViewBag.AllCategories)
+    {
+
+        <br>
+
+        <div class="card card-inverse card-bg">
+            <div class="card-block">
+                <h4 class="card-title">@Html.ActionLink((string)Category.CategoryName, "Details", new { CategoryId = Category.CategoryId })</h4>
+                <h6 class="card-subtitle mb-2 text-muted">@Category.CategoryDescription</h6>
+
+                <a class="card-link">@Html.ActionLink("Edit", "Update", new { CategoryId = Category.CategoryId })</a>
+                <a class="card-link">@Html.ActionLink("Delete", "Delete", new { CategoryId = @Category.CategoryId })</a>
+            </div>
+        </div>
+
+    }
+</div>
+<h4>@Html.ActionLink("Create new Category", "Create")</h4>
+
+		<br>
+
+ 
+
+

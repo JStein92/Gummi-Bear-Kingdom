@@ -1,0 +1,15 @@
+﻿@model GummiBearKingdom.Models.Category
+
+<h2>Details for @Model.CategoryName</h2>
+
+@foreach(var product in @Model.Products)
+{
+    <li>@product.ProductName | @Html.ActionLink("Details","Details","Product", new {ProductId = product.ProductId}) 
+	|  @Html.ActionLink("Edit","Update","Product", new {ProductId = product.ProductId}) 
+	|  @Html.ActionLink("Delete","Delete","Product", new {ProductId = product.ProductId}) 
+    </li>
+}
+
+@Html.ActionLink("Add New Product", "Create", "Product", new {CategoryId = @Model.CategoryId})
+
+@Html.ActionLink("Back", "Index")

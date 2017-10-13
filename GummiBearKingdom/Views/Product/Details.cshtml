@@ -1,0 +1,6 @@
+﻿@model GummiBearKingdom.Models.Product
+
+<h2>Details for @Model.ProductName</h2>
+
+
+@Html.ActionLink("Back", "Details", "Category", new { CategoryId = Model.CategoryId })

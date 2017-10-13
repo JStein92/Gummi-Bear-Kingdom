@@ -1,0 +1,10 @@
+﻿@model GummiBearKingdom.Models.Product
+
+<h2>Are you sure you want to delete @Model.ProductName?</h2>
+
+@using (Html.BeginForm())
+{
+    <input type ="submit" value="Delete" class = "btn btn-danger">
+}
+
+@Html.ActionLink("Back", "Details", "Category", new { CategoryId = @Model.CategoryId })
